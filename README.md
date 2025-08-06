@@ -1,5 +1,7 @@
 # tradedata
 
+Runs in AWS Lambda, uses S3
+
 Event JSON:
 
 {

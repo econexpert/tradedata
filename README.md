@@ -66,6 +66,16 @@ COUNTRY_CODES_KEY → the key (path) of the country-codes.json file in your S3 b
 
 S3_BUCKET_NAME → your S3 bucket name.
 
+or using CLI script: 
+```
+aws lambda update-function-configuration \
+    --function-name MyLambdaFunction \
+    --memory-size 1024 \
+    --timeout 900 \
+    --environment "Variables={S3_BUCKET_NAME=my-bucket,COUNTRY_CODES_KEY=country_codes.json,COMTRADE_API_KEY=xxxx}"
+```
+which will increase memeory, set longer timeout, and add envionmental variables
+
 ### 5. Add IAM permissions
 
 Attach a policy to your Lambda’s IAM role allowing read/write access to the S3 bucket, e.g.:
